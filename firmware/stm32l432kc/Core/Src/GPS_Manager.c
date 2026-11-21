@@ -1,4 +1,3 @@
-
 #include "Mission_Data.h"
 #include "bridge_manager.h"
 #include "GPS_Manager.h"
@@ -16,9 +15,9 @@ char gps_buffer[100];
 uint8_t gps_idx = 0;
 
 void GPS_Init(void) {
-    gps_idx = 0;
-    memset(gps_buffer, 0, sizeof(gps_buffer));
-    HAL_UART_Receive_IT(&huart1, &gps_byte, 1);
+	gps_idx = 0;
+	memset(gps_buffer, 0, sizeof(gps_buffer));
+	HAL_UART_Receive_IT(&huart1, &gps_byte, 1);
 }
 
 /**
@@ -28,33 +27,30 @@ void GPS_Init(void) {
 /* En GPS_Manager.c */
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-    if (huart->Instance == USART1) {
+	if (huart->Instance == USART1) {
 
-        if (gps_byte == '\n') {
+		if (gps_byte == '\n') {
 
-            if (gps_idx > 5) {
-                gps_buffer[gps_idx] = '\0';
+			if (gps_idx > 5) {
+				gps_buffer[gps_idx] = '\0';
 
-                strncpy(cansatData.gps_sentence,
-                        gps_buffer,
-                        sizeof(cansatData.gps_sentence)-1);
+				strncpy(cansatData.gps_sentence, gps_buffer,
+						sizeof(cansatData.gps_sentence) - 1);
 
-                cansatData.gps_sentence[
-                    sizeof(cansatData.gps_sentence)-1
-                ] = '\0';
-            }
+				cansatData.gps_sentence[sizeof(cansatData.gps_sentence) - 1] =
+						'\0';
+			}
 
-            gps_idx = 0;
-        }
-        else if (gps_byte != '\r') {
+			gps_idx = 0;
+		} else if (gps_byte != '\r') {
 
-            if (gps_idx < sizeof(gps_buffer)-1) {
-                gps_buffer[gps_idx++] = gps_byte;
-            } else {
-                gps_idx = 0;
-            }
-        }
+			if (gps_idx < sizeof(gps_buffer) - 1) {
+				gps_buffer[gps_idx++] = gps_byte;
+			} else {
+				gps_idx = 0;
+			}
+		}
 
-        HAL_UART_Receive_IT(&huart1, &gps_byte, 1);
-    }
+		HAL_UART_Receive_IT(&huart1, &gps_byte, 1);
+	}
 }

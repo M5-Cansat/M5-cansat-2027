@@ -2,10 +2,10 @@
 #define MISSION_MANAGER_H
 
 typedef enum {
-    STATE_IDLE = 0,
-    STATE_ARMED,
-    STATE_FALLING,
-    STATE_TRIGGERED,
+	STATE_IDLE = 0,
+	STATE_ARMED,
+	STATE_FALLING,
+	STATE_TRIGGERED,
 	STATE_MISSION_FINISHED  // <-- Nuevo estado final
 } MissionState_t;
 

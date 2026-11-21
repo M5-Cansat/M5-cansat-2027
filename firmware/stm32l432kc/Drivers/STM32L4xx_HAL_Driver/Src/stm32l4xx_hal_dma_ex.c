@@ -1,42 +1,42 @@
 /**
-  ******************************************************************************
-  * @file    stm32l4xx_hal_dma_ex.c
-  * @author  MCD Application Team
-  * @brief   DMA Extension HAL module driver
-  *         This file provides firmware functions to manage the following
-  *         functionalities of the DMA Extension peripheral:
-  *           + Extended features functions
-  *
-  @verbatim
-  ==============================================================================
-                        ##### How to use this driver #####
-  ==============================================================================
-  [..]
-  The DMA Extension HAL driver can be used as follows:
-   (+) Configure the DMAMUX Synchronization Block using HAL_DMAEx_ConfigMuxSync function.
-   (+) Configure the DMAMUX Request Generator Block using HAL_DMAEx_ConfigMuxRequestGenerator function.
-       Functions HAL_DMAEx_EnableMuxRequestGenerator and HAL_DMAEx_DisableMuxRequestGenerator can then be used
-       to respectively enable/disable the request generator.
+ ******************************************************************************
+ * @file    stm32l4xx_hal_dma_ex.c
+ * @author  MCD Application Team
+ * @brief   DMA Extension HAL module driver
+ *         This file provides firmware functions to manage the following
+ *         functionalities of the DMA Extension peripheral:
+ *           + Extended features functions
+ *
+ @verbatim
+ ==============================================================================
+ ##### How to use this driver #####
+ ==============================================================================
+ [..]
+ The DMA Extension HAL driver can be used as follows:
+ (+) Configure the DMAMUX Synchronization Block using HAL_DMAEx_ConfigMuxSync function.
+ (+) Configure the DMAMUX Request Generator Block using HAL_DMAEx_ConfigMuxRequestGenerator function.
+ Functions HAL_DMAEx_EnableMuxRequestGenerator and HAL_DMAEx_DisableMuxRequestGenerator can then be used
+ to respectively enable/disable the request generator.
 
-   (+) To handle the DMAMUX Interrupts, the function  HAL_DMAEx_MUX_IRQHandler should be called from
-       the DMAMUX IRQ handler i.e DMAMUX1_OVR_IRQHandler.
-       As only one interrupt line is available for all DMAMUX channels and request generators , HAL_DMAEx_MUX_IRQHandler should be
-       called with, as parameter, the appropriate DMA handle as many as used DMAs in the user project
-      (exception done if a given DMA is not using the DMAMUX SYNC block neither a request generator)
+ (+) To handle the DMAMUX Interrupts, the function  HAL_DMAEx_MUX_IRQHandler should be called from
+ the DMAMUX IRQ handler i.e DMAMUX1_OVR_IRQHandler.
+ As only one interrupt line is available for all DMAMUX channels and request generators , HAL_DMAEx_MUX_IRQHandler should be
+ called with, as parameter, the appropriate DMA handle as many as used DMAs in the user project
+ (exception done if a given DMA is not using the DMAMUX SYNC block neither a request generator)
 
-  @endverbatim
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2017 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ @endverbatim
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2017 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l4xx_hal.h"
