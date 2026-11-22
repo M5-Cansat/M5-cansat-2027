@@ -1,0 +1,30 @@
+grupo,variante,llega_%,llega_en_4min_%,se_sale_%,tiempo_medio_s,dist_real_final_m,tiempo_vs_ideal_%,llega_% ±,IC95 llega_%
+α (tasa de aprendizaje),alpha=0.05,94.1,52.6,4.9,231.1,3.8,166.1,1.4,0.9
+α (tasa de aprendizaje),alpha=0.1,92.8,50.5,4.7,238.3,3.8,172.2,4.3,2.6
+α (tasa de aprendizaje),alpha=0.3,86.6,50.4,5.8,228.5,3.9,170.4,12.6,7.8
+Decaimiento de α,alpha_decae=False,89.0,46.2,6.2,247.3,3.8,189.4,7.2,4.5
+Decaimiento de α,alpha_decae=lineal,92.8,50.5,4.7,238.3,3.8,172.2,4.3,2.6
+Decaimiento de α,alpha_decae=clase,92.9,52.6,5.6,227.8,3.8,164.4,1.8,1.1
+γ (descuento),gamma=0.9,88.4,50.6,5.0,230.7,3.9,170.7,10.4,6.4
+γ (descuento),gamma=0.95,92.8,50.5,4.7,238.3,3.8,172.2,4.3,2.6
+γ (descuento),gamma=0.99,93.9,49.7,5.0,240.8,3.8,172.6,1.0,0.6
+ε (exploración),eps=0.0,81.4,38.7,4.9,260.5,3.9,198.5,11.1,6.9
+ε (exploración),eps=0.01,94.3,48.0,4.5,247.2,3.9,176.1,1.6,1.0
+ε (exploración),eps=0.1,93.2,53.4,4.6,227.7,3.8,163.5,3.2,2.0
+ε (exploración),eps=0.2,83.5,49.6,5.0,224.7,3.8,170.5,12.2,7.5
+ε (exploración),eps=decreciente,92.8,50.5,4.7,238.3,3.8,172.2,4.3,2.6
+UCB vs ε-greedy,"eps=ucb, c_ucb=2.0",81.4,39.2,4.5,257.4,3.9,193.9,14.8,9.2
+UCB vs ε-greedy,"eps=ucb, c_ucb=20.0",91.6,41.5,5.8,264.7,3.9,191.5,2.8,1.7
+UCB vs ε-greedy,eps=decreciente,92.8,50.5,4.7,238.3,3.8,172.2,4.3,2.6
+Q₀ (optimismo),q0=0.0,92.8,50.5,4.7,238.3,3.8,172.2,4.3,2.6
+Q₀ (optimismo),q0=20.0,93.3,52.3,4.2,231.7,3.8,169.4,4.0,2.5
+Q₀ (optimismo),q0=50.0,89.1,50.7,4.7,235.0,3.9,168.5,16.6,10.3
+Q₀ (optimismo),q0=100.0,92.4,51.5,5.4,232.8,3.8,168.2,4.0,2.5
+Q₀ (optimismo),"q0=50.0, eps=0.0",88.0,41.0,4.4,254.9,3.8,186.9,11.7,7.3
+Recompensa,recompensa=dispersa,51.6,38.0,2.6,191.1,3.9,199.5,15.9,9.9
+Recompensa,recompensa=progreso,94.2,51.2,5.0,237.7,3.8,171.1,1.4,0.9
+Recompensa,recompensa=progreso_tiempo,92.8,50.5,4.7,238.3,3.8,172.2,4.3,2.6
+SARSA vs Expected SARSA,algoritmo=sarsa,92.8,50.5,4.7,238.3,3.8,172.2,4.3,2.6
+SARSA vs Expected SARSA,algoritmo=esarsa,87.9,47.7,5.2,238.4,3.8,176.7,12.3,7.6
+Tabular vs semi-gradiente (Unidad 3),metodo=tabular,92.8,50.5,4.7,238.3,3.8,172.2,4.3,2.6
+Tabular vs semi-gradiente (Unidad 3),metodo=semigradiente,82.0,54.3,8.3,207.3,3.7,164.9,19.8,12.3
